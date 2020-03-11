@@ -1,7 +1,22 @@
 {
-  "name": "react-context-store",
+  "name": "@lnasc256/react-context-store",
+  "description": "",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "main": "build",
+  "author": {
+    "name" : "Lucas Nascimento",
+    "email" : "iam@lucasnascimen.to",
+    "url" : "https://dev.lucasnascimen.to"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "git://github.com/lnasc256/react-context-store.git"
+  },
+  "bugs": {
+    "url" : "https://github.com/lnasc256/react-context-store/issues",
+    "email" : "iam@lucasnascimen.to"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -15,6 +30,9 @@
     "react-dom": "^16.13.0",
     "react-scripts": "3.4.0",
     "typescript": "~3.7.2"
+  },
+  "peerDependencies": {
+    "react": "^16.13.0"
   },
   "scripts": {
     "start": "react-scripts start",
