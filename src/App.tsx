@@ -1,25 +1,62 @@
 import React from 'react'
-import logo from './logo.svg'
+import StoreProvider, { useStore } from './store'
 import './App.scss'
+
+const Counter: React.FC = () => {
+  const { state, actions } = useStore()
+
+  const onIncrease = () => {
+    actions.increment()
+  }
+
+  const onIncreaseFive = () => {
+    actions.increment(5)
+  }
+
+  const onDecrease = () => {
+    actions.decrement()
+  }
+
+  const onDecreaseFive = () => {
+    actions.decrement(5)
+  }
+
+  const onReset = () => {
+    actions.reset()
+  }
+
+  return (
+    <div className="App">
+      {state.count}
+      <br />
+      <button onClick={onIncrease}>
+        + 1
+      </button>
+      {' '}
+      <button onClick={onIncreaseFive}>
+        + 5
+      </button>
+      {' '}
+      <button onClick={onDecrease}>
+        - 1
+      </button>
+      {' '}
+      <button onClick={onDecreaseFive}>
+        - 5
+      </button>
+      {' '}
+      <button onClick={onReset}>
+        Reset
+      </button>
+    </div>
+  )
+}
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StoreProvider>
+      <Counter />
+    </StoreProvider>
   )
 }
 
